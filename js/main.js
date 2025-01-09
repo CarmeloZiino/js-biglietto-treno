@@ -5,20 +5,43 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 - va applicato uno sconto del 40% per gli over 65.
 - L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca. */
 
-
-
-
 // 1. Impostare Variabili (Nome, Cognome, Età, Chilometri da percorrere)
 
-// 2. Chiedere all'utente Nome 
+let firstName = prompt("Qual è il tuo nome?", "Carmelo");
 
-// 3. Chiedere all'utente Cognome
+console.log("Nome:", firstName);
 
-// 4. Chiedere all'utente Età
+let lastName = prompt("Qual è il tuo cognome?", "Ziino");
 
-// 5. Chiedere all'utente Chilometri da Percorrere
+console.log("Cognome:", lastName);
 
-// 6.  Impostare il prezzo totale in base ai Km
+let age = prompt("Qual è la tua età?", "27");
 
-// 7. Calcolare lo Sconto {(Se < di 18 è del 20%) oppure (Se > 65 è del 40% )} e Applicarlo al prezzo totale
+console.log("Età:", age, "anni");
 
+let km = prompt("Quanti chilometri dovrai percorrere?", "1312");
+
+console.log("Chilometri da Percorrere:", km);
+
+// 2. Definire il prezzo del biglietto in base ai km (0.21€ al km) - Att! Secondo la mia interpretazione dell'esercizio, non va visualizzato in Console.
+
+const priceKm = 0.21;
+
+// 3. Calcolare il Prezzo Totale senza Sconti
+
+let totalPrice = km * priceKm;
+
+console.log("Il Totale da pagare è:", totalPrice, "€");
+
+// 3. Calcolare lo Sconto {(Se < di 18 è del 20%) oppure (Se > 65 è del 40% )}
+
+let discount = ("")
+
+if (age <18) {
+     discount = (totalPrice * 20) / 100;
+     console.log ("Hai maturato uno sconto di:" , discount , "€");
+ }
+else if (age >65) {
+     discount = (totalPrice * 40) / 100;
+     console.log ("Hai maturato uno sconto di:" , discount , "€");
+ }
